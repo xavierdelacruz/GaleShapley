@@ -130,7 +130,7 @@ namespace GaleShapley
                         }
                         else
                         {
-                            Console.WriteLine($"Invalid preference list object in current proposer: {proposer}");
+                            Console.WriteLine($"Invalid preference list object in current proposer: {proposer.Name}");
                             return null;
                         }
                     }

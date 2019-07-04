@@ -28,13 +28,13 @@ namespace GaleShapley
 
             if (person.GetType() == typeof(Man))
             {
-                Console.WriteLine("Error: Adding Man to Woman Preference List.");
+                Console.WriteLine($"Error: Adding Man: {person.Name} to Woman Preference List.");
                 return false;
             }
 
             if (PreferenceList.Contains(person))
             {
-                Console.WriteLine($"Person {person} has already been added to the list.");
+                Console.WriteLine($"Person {person.Name} has already been added to the list.");
                 return false;
             }
 
@@ -46,13 +46,13 @@ namespace GaleShapley
         {
             if (person == null)
             {
-                Console.WriteLine("Null value for person being removed");
+                Console.WriteLine("Null value for person being removed.");
                 return false;
             }
 
             if (person.GetType() == typeof(Man))
             {
-                Console.WriteLine("Error: Removing Man from Women Preference List.");
+                Console.WriteLine($"Error: Removing Man: {person.Name} from Women Preference List.");
                 return false;
             }
 
