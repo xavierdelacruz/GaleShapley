@@ -60,6 +60,7 @@ namespace GaleShapley
             {
                 Console.WriteLine($"{pair.Key.Name} is paired with {pair.Value.Name}");
             }
+            Console.WriteLine("Press Enter to exit Console Program");
             Console.ReadLine();
         }
     }

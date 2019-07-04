@@ -16,7 +16,7 @@ namespace GaleShapley
         /// will be considered as a point of comparison when ranking preferences.
         /// </summary>
         /// <param name="proposerList"></param>
-        /// <param name="acceptorList"></param>
+        /// <param name="accepteeList"></param>
         /// <returns></returns>
         public IDictionary<IPerson, IPerson> FindStableMatches(List<IPerson> proposerList, List<IPerson> accepteeList)
         {
@@ -44,7 +44,6 @@ namespace GaleShapley
             {
                 foreach (var proposer in proposerList)
                 {
-
                     if (!proposer.IsEngaged)
                     {
                         var firstAccepteeInPrefList = proposer.PreferenceList.First();
@@ -117,6 +116,7 @@ namespace GaleShapley
                                     return null;
                                 }
 
+                                // Setting true is possibly redundant, but let us ensure it is guaranteed to be true at all times.
                                 acceptee.IsEngaged = true;
                                 acceptee.Fiance = proposer;
                                 proposer.IsEngaged = true;

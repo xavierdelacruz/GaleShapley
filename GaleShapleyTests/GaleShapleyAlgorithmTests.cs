@@ -46,8 +46,8 @@ namespace GaleShapley.Tests
 
             var result = solver.FindStableMatches(proposers, acceptees);
 
-            Equals(result[m1] = w2);
-            Equals(result[m2] = w1);
+            Assert.AreEqual(result[m1], w2);
+            Assert.AreEqual(result[m2], w1);
         }
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace GaleShapley.Tests
 
             var result = solver.FindStableMatches(proposers, acceptees);
 
-            Equals(result[m1] = w1);
-            Equals(result[m2] = w2);
+            Assert.AreEqual(result[m1], w1);
+            Assert.AreEqual(result[m2], w2);
         }
 
         /// <summary>
@@ -215,9 +215,9 @@ namespace GaleShapley.Tests
 
             var result = solver.FindStableMatches(proposers, acceptees);
 
-            Equals(result[m1] = w1);
-            Equals(result[m2] = w3);
-            Equals(result[m3] = w2);
+            Assert.AreEqual(result[m1], w1);
+            Assert.AreEqual(result[m2], w3);
+            Assert.AreEqual(result[m3], w2);
         }
 
         /// <summary>
@@ -274,9 +274,9 @@ namespace GaleShapley.Tests
 
             var result = solver.FindStableMatches(proposers, acceptees);
 
-            Equals(result[m1] = w1);
-            Equals(result[m2] = w2);
-            Equals(result[m3] = w3);
+            Assert.AreEqual(result[m1], w1);
+            Assert.AreEqual(result[m2], w2);
+            Assert.AreEqual(result[m3], w3);
         }
     }
 }
