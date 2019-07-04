@@ -28,11 +28,11 @@ namespace GaleShapley
 
             if (proposerList.Count.Equals(0) || accepteeList.Count.Equals(0))
             {
-                Console.WriteLine("There are no proposerList or accepteeList in the given input collection.");
+                Console.WriteLine("There are no Person objects in proposerList or accepteeList in the given input collection.");
                 return null;
             }
 
-            if (!proposerList.Count.Equals(accepteeList.Count()))
+            if (!proposerList.Count.Equals(accepteeList.Count))
             {
                 Console.WriteLine("Input for proposerList and accepteeList do not have the same element count.");
                 return null;
@@ -47,19 +47,13 @@ namespace GaleShapley
                     if (!proposer.IsEngaged)
                     {
                         var firstAccepteeInPrefList = proposer.PreferenceList.First();
-                        var checkIfInList = accepteeList.Any(person => person.Name == firstAccepteeInPrefList.Name);
 
-                        if (!checkIfInList)
-                        {
-                            Console.WriteLine($"{firstAccepteeInPrefList.Name} is not the list of people being proposed to.");
-                            return null;
-                        }
-                        else if (!firstAccepteeInPrefList.IsEngaged && firstAccepteeInPrefList.Fiance == null)
+                        if (!firstAccepteeInPrefList.IsEngaged && firstAccepteeInPrefList.Fiance == null)
                         {
                             var acceptee = accepteeList.Find(person => person == firstAccepteeInPrefList);
                             if (acceptee == null)
                             {
-                                Console.WriteLine($"{acceptee.Name} is not the list of people being proposed to.");
+                                Console.WriteLine($"{acceptee.Name} is not included in the list of people being proposed to.");
                                 return null;
                             }
 
@@ -84,7 +78,6 @@ namespace GaleShapley
                             {
                                 pairDictionary.Add(proposer, acceptee);
                             }
-
                         }
                         else if (firstAccepteeInPrefList.IsEngaged && firstAccepteeInPrefList.Fiance != null)
                         {

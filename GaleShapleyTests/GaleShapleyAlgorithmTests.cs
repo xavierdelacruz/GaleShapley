@@ -186,7 +186,6 @@ namespace GaleShapley.Tests
             m3.AddPersonToPrefList(w2);
             m3.AddPersonToPrefList(w3);
 
-
             w1.AddPersonToPrefList(m1);
             w1.AddPersonToPrefList(m3);
             w1.AddPersonToPrefList(m2);
